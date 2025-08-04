@@ -61,7 +61,7 @@ discdir:
 discdir/BDMV/JAR/00000.jar: discdir $(SOURCES)
 	$(JAVAC) $(JFLAGS) -cp $(CLASSPATH) $(SOURCES)
 	$(JAR) cf $@ -C src/ .
-	# $(BDSIGNER) -keystore $(BDJSDK_HOME)/resources/sig.ks $@
+	$(BDSIGNER) -keystore $(BDJSDK_HOME)/resources/sig.ks $@
 
 
 discdir/%: discdir
