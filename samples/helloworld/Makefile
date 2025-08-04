@@ -23,7 +23,7 @@ DISC_LABEL := helloworld
 MAKEFILE_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 BDJSDK_HOME  ?= $(MAKEFILE_DIR)/../../
 BDSIGNER     := $(BDJSDK_HOME)/host/bin/bdsigner
-MAKEFS       := $(BDJSDK_HOME)/host/bin/makefs
+MAKEFS := genisoimage
 JAVA8_HOME    ?= $(BDJSDK_HOME)/host/jdk8
 JAVAC        := $(JAVA8_HOME)/bin/javac
 JAR          := $(JAVA8_HOME)/bin/jar
@@ -69,7 +69,8 @@ discdir/%: discdir
 
 
 $(DISC_LABEL).iso: $(DISC_FILES)
-	$(MAKEFS) -m 16m -t udf -o T=bdre,v=2.50,L=$(DISC_LABEL) $@ discdir
+	#$(MAKEFS) -m 16m -t udf -o T=bdre,v=2.50,L=$(DISC_LABEL) $@ discdir
+	$(MAKEFS) -udf -V $(DISC_LABEL) -o $@ discdir
 
 
 clean:
