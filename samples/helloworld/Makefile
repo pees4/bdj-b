@@ -50,8 +50,8 @@ DISC_DIRS  := $(patsubst $(BDJSDK_HOME)/resources/AVCHD%,discdir%,$(TMPL_DIRS)) 
 DISC_FILES := $(patsubst $(BDJSDK_HOME)/resources/AVCHD%,discdir%,$(TMPL_FILES)) \
               discdir/BDMV/JAR/00000.jar
 
-
-all: discdir/BDMV/JAR/00000.jar
+all: $(DISC_LABEL).iso
+#all: discdir/BDMV/JAR/00000.jar
 
 
 discdir:
