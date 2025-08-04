@@ -6,7 +6,7 @@ import javax.tv.xlet.XletContext;
 import org.bdj.Status;
 import org.bdj.api.NativeInvoke;
 
-import org.bdj.sandbox.XletManagerExploit;
+// import org.bdj.sandbox.XletManagerExploit;
 
 public class InitXlet implements Xlet {
 	
